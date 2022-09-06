@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginEnd="10dp"
+    android:layout_marginStart="5dp"
+    android:background="@drawable/ic_rectangle_bg_black">
+
+
+<TextView
+    android:layout_margin="10dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="3 KG(Pack of 1)"
+    android:textColor="@color/black"
+    android:fontFamily="@font/regular"/>
+</LinearLayout>
