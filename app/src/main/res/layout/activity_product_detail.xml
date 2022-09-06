@@ -13,11 +13,11 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/header"
-            android:visibility="visible"
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:background="@color/white"
             android:elevation="5dp"
+            android:visibility="visible"
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
@@ -164,7 +164,6 @@
                     app:layout_constraintTop_toBottomOf="@id/banner_rl_layout">
 
                     <TextView
-                        android:visibility="visible"
                         android:id="@+id/id_title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -174,11 +173,11 @@
                         android:textAllCaps="false"
                         android:textColor="@color/black"
                         android:textSize="16sp"
+                        android:visibility="visible"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:visibility="visible"
                         android:id="@+id/id_subtitle"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -187,6 +186,7 @@
                         android:layout_marginEnd="15dp"
                         android:text="Brand: Pedigree"
                         android:textColor="@color/common_text_color_grey"
+                        android:visibility="visible"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/id_title" />
@@ -198,8 +198,8 @@
                         android:layout_marginStart="20dp"
                         android:layout_marginTop="10dp"
                         android:layout_marginBottom="10dp"
-                        android:visibility="visible"
                         android:orientation="horizontal"
+                        android:visibility="visible"
                         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -209,7 +209,6 @@
                         tools:listitem="@layout/item_product_weight_layout" />
 
                     <TextView
-                        android:visibility="visible"
                         android:id="@+id/price_id"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -218,13 +217,13 @@
                         android:text="₹586.00"
                         android:textColor="#252752"
                         android:textSize="22sp"
+                        android:visibility="visible"
                         app:layout_constraintEnd_toStartOf="@id/discounted_price_id"
                         app:layout_constraintHorizontal_bias="0.003"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/product_weight_recycler" />
 
                     <TextView
-                        android:visibility="visible"
                         android:id="@+id/discounted_price_id"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -234,8 +233,9 @@
                         android:text="₹686.00"
                         android:textColor="@color/common_text_color_grey"
                         android:textSize="14sp"
-                        app:layout_constraintHorizontal_bias="0.3"
+                        android:visibility="visible"
                         app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.3"
                         app:layout_constraintStart_toStartOf="@id/price_id"
                         app:layout_constraintTop_toBottomOf="@id/product_weight_recycler" />
 
@@ -393,7 +393,6 @@
                         app:layout_constraintTop_toBottomOf="@id/packageInfoId" />
 
                     <androidx.recyclerview.widget.RecyclerView
-                        android:visibility="visible"
                         android:id="@+id/productDescriptionRecycler"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -401,6 +400,7 @@
                         android:layout_marginTop="10dp"
                         android:layout_marginBottom="20dp"
                         android:orientation="vertical"
+                        android:visibility="visible"
                         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -434,22 +434,22 @@
 
                     <LinearLayout
                         android:id="@+id/rating_icon"
-                        android:orientation="vertical"
-                        android:gravity="center"
                         android:layout_width="22dp"
                         android:layout_height="22dp"
                         android:layout_marginTop="10dp"
                         android:background="@drawable/ic_round_background_yellow"
+                        android:gravity="center"
+                        android:orientation="vertical"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.05"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/customer_reviewId" >
+                        app:layout_constraintTop_toBottomOf="@id/customer_reviewId">
 
                         <ImageView
-                            android:layout_marginTop="3dp"
                             android:layout_width="15dp"
                             android:layout_height="15dp"
-                            android:background="@drawable/ic_rating_star_white"/>
+                            android:layout_marginTop="3dp"
+                            android:background="@drawable/ic_rating_star_white" />
                     </LinearLayout>
 
                     <TextView
@@ -472,9 +472,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="15dp"
+                        android:layout_marginTop="5dp"
                         android:layout_marginEnd="15dp"
                         android:fontFamily="@font/book"
-                        android:layout_marginTop="5dp"
                         android:text="501 ratings"
                         android:textColor="@color/common_text_color_grey"
                         android:textSize="14sp"
@@ -484,26 +484,27 @@
                         app:layout_constraintTop_toBottomOf="@id/rating_icon" />
 
                     <TextView
-                        android:layout_marginTop="9dp"
                         android:id="@+id/small_bullet"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="15dp"
+                        android:layout_marginTop="9dp"
                         android:fontFamily="@font/book"
                         android:text=" • "
-                        android:textSize="10sp"
                         android:textColor="@color/common_text_color_grey"
+                        android:textSize="10sp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.15"
                         app:layout_constraintStart_toStartOf="@id/rating_count"
                         app:layout_constraintTop_toBottomOf="@id/rating_icon" />
+
                     <TextView
-                        android:layout_marginTop="5dp"
                         android:id="@+id/review_count"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/book"
+                        android:layout_marginTop="5dp"
                         android:layout_marginEnd="15dp"
+                        android:fontFamily="@font/book"
                         android:text="24 Reviews"
                         android:textColor="@color/common_text_color_grey"
                         android:textSize="14sp"
@@ -521,13 +522,13 @@
                         app:layout_constraintTop_toBottomOf="@id/rating_count" />
 
                     <androidx.recyclerview.widget.RecyclerView
-                        android:visibility="visible"
                         android:id="@+id/reviewRecycler"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="15dp"
                         android:layout_marginBottom="10dp"
                         android:orientation="vertical"
+                        android:visibility="visible"
                         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -558,8 +559,8 @@
                         app:layout_constraintHorizontal_bias="0.28"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/divider5" />
+
                     <androidx.recyclerview.widget.RecyclerView
-                        android:visibility="visible"
                         android:id="@+id/similar_product_recycler"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -567,6 +568,7 @@
                         android:layout_marginTop="15dp"
                         android:layout_marginBottom="10dp"
                         android:orientation="horizontal"
+                        android:visibility="visible"
                         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -580,6 +582,7 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.core.widget.NestedScrollView>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="100dp"
@@ -587,21 +590,23 @@
             android:orientation="horizontal"
             android:weightSum="2"
             app:layout_constraintBottom_toBottomOf="parent">
+
             <Button
-                android:layout_margin="10dp"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
-                android:text="Add to cart"
-                android:textColor="@color/black"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
                 android:background="@drawable/ic_rectangle_bg_black"
-                android:layout_weight="1"/>
+                android:text="Add to cart"
+                android:textColor="@color/black" />
+
             <Button
-                android:layout_margin="10dp"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
-                android:text="Buy Now"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
                 android:background="@drawable/ic_rectangle_blue_bg"
-                android:layout_weight="1"/>
+                android:text="Buy Now" />
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
