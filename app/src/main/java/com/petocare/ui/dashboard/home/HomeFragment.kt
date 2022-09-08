@@ -1,5 +1,6 @@
 package com.petocare.ui.dashboard.home
 
+import android.content.Intent
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -14,6 +15,7 @@ import com.petocare.base.BaseFragment
 import com.petocare.infra.RootUtils.HorizontalMarginItemDecoration
 import com.petocare.interfaces.HomeListener
 import com.petocare.ui.dashboard.DashboardActivity
+import com.petocare.ui.search.SearchActivity
 import kotlinx.android.synthetic.main.home_fragment.*
 
 class HomeFragment : BaseFragment(), HomeListener {
@@ -48,6 +50,11 @@ class HomeFragment : BaseFragment(), HomeListener {
         topCategoryAdapter = TopCategoryAdapter(activity as DashboardActivity, arrayListOf())
         initializeBannerViewPager()
         initializeRecycler()
+
+        search_btn.setOnClickListener {
+            val intent = Intent(requireContext(), SearchActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun initMvvm() {
