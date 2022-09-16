@@ -1,14 +1,9 @@
 package com.petocare.ui.dashboard
 
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
 import android.util.Log
-import androidx.activity.viewModels
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentTransaction
 import com.petocare.R
-import com.petocare.base.BaseFragment
+import com.petocare.databinding.ActivityDashboardBinding
+import com.petocare.infra.base_class.BaseActivity
 import com.petocare.ui.dashboard.autoship.AutoshipFragment
 import com.petocare.ui.dashboard.home.HomeFragment
 import com.petocare.ui.dashboard.offers.OffersFragment
@@ -16,16 +11,21 @@ import com.petocare.ui.dashboard.profile.ProfileFragment
 import com.petocare.ui.dashboard.veterinary.VeterinaryFragment
 import es.dmoral.toasty.Toasty
 import kotlinx.android.synthetic.main.activity_dashboard.*
-import java.lang.IllegalStateException
 
-class DashboardActivity : AppCompatActivity() {
+class DashboardActivity : BaseActivity<ActivityDashboardBinding, DashboardViewModel>() {
 
-    val viewModel: DashboardViewModel by viewModels()
     var backState = false
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_dashboard)
+
+    override fun getLayout(): Int {
+        return R.layout.activity_dashboard
+    }
+
+    override fun getViewModelClass(): Class<DashboardViewModel> {
+        return DashboardViewModel::class.java
+    }
+
+    override fun onCreateView() {
         addFragment(HomeFragment(), HomeFragment::class.java.name)
         setUpNavigation()
         initView()
@@ -89,52 +89,6 @@ class DashboardActivity : AppCompatActivity() {
                 }
             }
             true
-        }
-    }
-
-    private var currentFragment: Fragment? = null
-    private var fragmentManager: FragmentManager? = null
-    private var fragmentTransaction: FragmentTransaction? = null
-
-    fun addFragment(fragment: Fragment, fragmentTag: String?) {
-        currentFragment = fragment
-        fragmentManager = supportFragmentManager
-        fragmentTransaction = fragmentManager!!.beginTransaction()
-        fragmentTransaction!!.add(R.id.rootContainer, fragment, fragmentTag)
-        fragmentTransaction!!.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
-        fragmentTransaction!!.addToBackStack(fragmentTag)
-        fragmentTransaction!!.commit()
-    }
-
-    fun addOrReplaceFragment(fragment: Fragment, fragmentTag: String?) {
-        currentFragment = fragment
-        fragmentManager = supportFragmentManager
-        fragmentTransaction = fragmentManager!!.beginTransaction()
-        fragmentTransaction!!.replace(R.id.rootContainer, fragment, fragmentTag)
-//        fragmentTransaction!!.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
-        fragmentTransaction!!.commit()
-    }
-
-    fun replaceFragment(fragment: Fragment, fragmentTag: String?) {
-        popFragmentFromBackStack()
-        addFragment(fragment, fragmentTag)
-    }
-
-    private fun tellFragments() {
-        val fragments =
-            supportFragmentManager.fragments
-        for (f in fragments) {
-            if (f != null && f is BaseFragment)
-                f.onBackPressed()
-        }
-    }
-
-    fun popFragmentFromBackStack() {
-        try {
-            fragmentManager!!.popBackStack()
-        } catch (e: IllegalStateException) {
-            e.printStackTrace()
-            //ignore
         }
     }
 

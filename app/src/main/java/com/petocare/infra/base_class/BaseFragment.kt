@@ -1,4 +1,4 @@
-package com.petocare.base
+package com.petocare.infra.base_class
 
 
 import android.Manifest
@@ -24,6 +24,11 @@ import com.petocare.infra.rootUtils.Constants.ALERT_YES
 import java.util.ArrayList
 import java.util.HashMap
 
+
+/**
+ * A simple [Fragment] subclass.
+ *
+ */
 open class BaseFragment : Fragment(), OnBackPressed {
 
 
@@ -107,7 +112,7 @@ open class BaseFragment : Fragment(), OnBackPressed {
       listPermissionsNeeded.add(Manifest.permission.READ_EXTERNAL_STORAGE)
     }
 
-    if (!listPermissionsNeeded.isEmpty()) {
+    if (listPermissionsNeeded.isNotEmpty()) {
       requestPermissions(
         listPermissionsNeeded.toTypedArray(),
         REQUEST_ID_MULTIPLE_PERMISSIONS
@@ -132,7 +137,7 @@ open class BaseFragment : Fragment(), OnBackPressed {
           PackageManager.PERMISSION_GRANTED
         perms[Manifest.permission.READ_EXTERNAL_STORAGE] = PackageManager.PERMISSION_GRANTED
         // Fill with actual results from user
-        if (grantResults.size > 0) {
+        if (grantResults.isNotEmpty()) {
           for (i in permissions.indices)
             perms[permissions[i]] = grantResults[i]
           // Check for both permissions
@@ -219,6 +224,7 @@ open class BaseFragment : Fragment(), OnBackPressed {
 
   override fun onBackPressed() {
   }
+
 
 
 }

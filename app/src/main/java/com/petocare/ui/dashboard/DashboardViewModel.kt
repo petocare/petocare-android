@@ -3,8 +3,9 @@ package com.petocare.ui.dashboard
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.petocare.infra.base_class.BaseViewModel
 
-class DashboardViewModel: ViewModel() {
+class DashboardViewModel: BaseViewModel() {
     private val dataResult: MutableLiveData<List<String>> by lazy {
         MutableLiveData<List<String>>().also {
             loadUsers()

@@ -19,16 +19,18 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".ui.search.SearchActivity"
-            android:exported="true" />
+            android:screenOrientation="portrait"
+            android:exported="false" />
         <activity
             android:name=".ui.productdetail.ProductDetailActivity"
+            android:screenOrientation="portrait"
             android:exported="false" />
         <activity
             android:name=".ui.dashboard.DashboardActivity"
+            android:screenOrientation="portrait"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

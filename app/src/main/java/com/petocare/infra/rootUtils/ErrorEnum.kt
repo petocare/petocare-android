@@ -1,4 +1,4 @@
-package com.petocare.infra.RootUtils
+package com.petocare.infra.rootUtils
 
 
 enum class ErrorEnum {

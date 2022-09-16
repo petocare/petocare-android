@@ -1,4 +1,4 @@
-package com.petocare.infra.RootUtils
+package com.petocare.infra.rootUtils
 
 object Constants {
     const val ALERT_YES = 1

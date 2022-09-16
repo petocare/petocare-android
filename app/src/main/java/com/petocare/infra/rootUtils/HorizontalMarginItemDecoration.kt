@@ -1,4 +1,4 @@
-package com.petocare.infra.RootUtils
+package com.petocare.infra.rootUtils
 
 import android.content.Context
 import android.graphics.Rect
