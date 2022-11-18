@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.petocare.R
 import com.petocare.ui.dashboard.DashboardActivity
+import com.petocare.ui.onBoarding.OnBoardingActivity
 import kotlinx.android.synthetic.main.fragment_verify.*
 
 class VerifyFragment : Fragment() {
@@ -50,7 +51,8 @@ class VerifyFragment : Fragment() {
             login_btn.alpha = 1f
         }
         login_btn.setOnClickListener {
-            startActivity(Intent(requireContext(), DashboardActivity::class.java))
+            timer.cancel()
+            startActivity(Intent(requireContext(), OnBoardingActivity::class.java))
             requireActivity().finish()
         }
         back_button.setOnClickListener {

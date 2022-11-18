@@ -42,7 +42,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:fontFamily="@font/regular"
-                android:text="Create an account to experience Petocare"
+                android:text="Create an account to experience \nPetocare"
                 android:textColor="@color/text_color_grey"
                 android:textFontWeight="450"
                 android:textSize="12sp"
