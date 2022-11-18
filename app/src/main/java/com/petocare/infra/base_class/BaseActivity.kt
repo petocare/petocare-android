@@ -28,7 +28,6 @@ abstract class BaseActivity<Binding: ViewDataBinding, ViewModel: BaseViewModel>:
         onCreateView()
     }
 
-
     private var currentFragment: Fragment? = null
     private var fragmentManager: FragmentManager? = null
     private var fragmentTransaction: FragmentTransaction? = null

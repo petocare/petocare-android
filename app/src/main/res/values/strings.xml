@@ -10,4 +10,6 @@
     <string name="review_desc_string">Thought of giving it a try with a smaller pack for my pug. She \nactually likes it and cleans up her bowl within few minutes. \n Almost half pack over and she eats everyday with same interest.</string>
     <string name="review_title_string">Nice quality and good for picky eaters!!</string>
     <string name="product_title"><![CDATA[Pillow Cat &amp Dog Bed, Brown, Large]]></string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

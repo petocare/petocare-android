@@ -54,7 +54,7 @@ class RazorPayActivity : BaseActivity<ActivityRazorPayBinding, RazorPayViewModel
         val checkout = Checkout()
         try{
             checkout.setKeyID(razorpayKeyID)
-            checkout.setImage(R.mipmap.ic_launcher)
+            checkout.setImage(R.drawable.ic_launcher)
         }catch (e: java.lang.Exception){
             LogUtils.error(TAG, e.localizedMessage)
         }
